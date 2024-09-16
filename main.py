@@ -7,7 +7,7 @@ app.secret_key = "group1"
 
 @app.route('/')
 def index():
-    render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/game', methods=['POST'])
 def game():
