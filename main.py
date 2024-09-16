@@ -15,7 +15,7 @@ def game():
     ComputerChoice = random.randint(1, 4)
 
     if Playerchoice == 1 or Playerchoice == 2 or Playerchoice == 3 or Playerchoice == 4:
-        session['Player_choice']= Playerchoice
+        session['Player_choice'] = Playerchoice
         session['Computer_choice'] = ComputerChoice
         return redirect(url_for('results'))
     else:
