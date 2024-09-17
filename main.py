@@ -1,6 +1,5 @@
-from random import random
+from random import randint
 from flask import Flask, render_template, request, flash, redirect, url_for, session
-##from models import
 
 app = Flask(__name__)
 app.secret_key = "group1"
@@ -11,28 +10,27 @@ def index():
 
 @app.route('/game', methods=['POST'])
 def game():
-    Playerchoice = request.form['Player_choice']
-    ComputerChoice = random.randint(1, 4)
+    player_choice = request.form['Player_choice']
+    computer_choice = randint(1, 4)
 
-    if Playerchoice == 1 or Playerchoice == 2 or Playerchoice == 3 or Playerchoice == 4:
-        session['Player_choice'] = Playerchoice
-        session['Computer_choice'] = ComputerChoice
+    if player_choice in ['1', '2', '3', '4']:
+        session['player_choice'] = int(player_choice)
+        session['computer_choice'] = computer_choice
         return redirect(url_for('results'))
     else:
-        flash("Invalid choice must be 1-4")
-
-    return redirect(url_for('index'))
+        flash("Invalid choice. Must be 1-4")
+        return redirect(url_for('index'))
 
 @app.route('/results')
 def results():
-    Playerchoice = session.get('Player_choice')
-    ComputerChoice = session.get('Computer_choice')
+    player_choice = session.get('player_choice')
+    computer_choice = session.get('computer_choice')
 
-    if Playerchoice and ComputerChoice:
-        return render_template("results.html")
-
+    if player_choice is not None and computer_choice is not None:
+        return render_template("results.html", player_choice=player_choice, computer_choice=computer_choice)
+    else:
+        flash("No game data found. Please play the game first.")
+        return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-

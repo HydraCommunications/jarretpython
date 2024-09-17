@@ -29,3 +29,22 @@ a:hover {
     cursor: pointer;
     background-color: #565cf5;
 }
+.footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .footer-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+        .footer-text:last-child {
+            margin-bottom: 0;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #969aff;
+        }
