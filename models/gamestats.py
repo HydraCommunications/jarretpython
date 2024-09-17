@@ -8,20 +8,20 @@ class GameStats:
 
     def setComputerChoice(self, ComputerChoice):
        if ComputerChoice == 1:
-           choice = " "
+           choice = "/static/paper.jpg"
        if ComputerChoice == 2:
-           choice = " "
+           choice = "/static/rock.jpg"
        if ComputerChoice == 3:
-           choice = " "
+           choice = "/static/scissors.jpg"
        if ComputerChoice == 4:
            choice = " "
 
     def setPlayerChoice(self, playerChoice):
         if playerChoice == 1:
-            choice = " "
+            choice = "/static/paper.jpg"
         if playerChoice == 2:
-            choice = " "
+            choice = "/static/rock.jpg"
         if playerChoice == 3:
-            choice = " "
+            choice = "/static/scissors.jpg"
         if playerChoice == 4:
             choice = " "
