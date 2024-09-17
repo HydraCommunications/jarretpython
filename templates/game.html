@@ -4,15 +4,47 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    body {
+        margin: 0;
+    }
+    img {
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 5px;
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div {
+        font-size: 26px;
+        padding: 10px 5px;
+        overflow: hidden;
+        display: block;
+        margin: auto;
+        width: 40%;
+        text-align: center;
+    }
+</style>
 <body>
+    <!-- Something is probably wrong in my syntax here -->
     {% if ret_val == 'rock' %}
         <img src="../static/rock.jpg">
+        <div><label>Select rock <input type="checkbox"></label></div>
     {% elif ret_val == 'paper' %}
         <img src="../static/paper.jpg">
+        <div><label>Select paper <input type="checkbox"></label></div>
     {% elif ret_val == 'scissors' %}
         <img src="../static/scissors.jpg">
+        <div><label>Select scissors <input type="checkbox"></label></div>
     {% else %}
         <img src="../static/bomb.png">
+        <div><label>Select bomb <input type="checkbox"></label></div>
     {% endif %}
+
+    <div>
+        <input type="submit" value="Submit">
+    </div>
 </body>
 </html>
