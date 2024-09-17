@@ -5,10 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="flex-container">
-        <a href="#">
-            <img src="#" />
-        </a>
-    </div>
+    {% if ret_val == 'rock' %}
+        <img src="../static/rock.jpg">
+    {% elif ret_val == 'paper' %}
+        <img src="../static/paper.jpg">
+    {% elif ret_val == 'scissors' %}
+        <img src="../static/scissors.jpg">
+    {% else %}
+        <img src="../static/IMG_0812.jpeg">
+    {% endif %}
 </body>
 </html>
