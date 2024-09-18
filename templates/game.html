@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Game Results</title>
 </head>
 <body>
-    {% if ret_val == 'rock' %}
-        <img src="../static/rock.jpg">
-    {% elif ret_val == 'paper' %}
-        <img src="../static/paper.jpg">
-    {% elif ret_val == 'scissors' %}
-        <img src="../static/scissors.jpg">
-    {% else %}
-        <img src="../static/bomb.png">
-    {% endif %}
+    {% extends "layout.html" %}
+
+    {% block title %}Play - Rock, Paper, Scissors{% endblock %}
+
+    {% block content %}
+        <h1>Pick your move:</h1>
+        <a href="{{ url_for('play_game', choice='rock') }}">
+            <img src="{{ url_for('static', filename='../static/rock.jpg') }}" alt="Rock">
+        </a>
+        <a href="{{ url_for('play_game', choice='paper') }}">
+            <img src="{{ url_for('static', filename='../static/paper.jpg') }}" alt="Paper">
+        </a>
+        <a href="{{ url_for('play_game', choice='scissors') }}">
+            <img src="{{ url_for('static', filename='../static/scissors.jpg') }}" alt="Scissors">
+        </a>
+        <a href="{{ url_for('play_game', choice='bomb') }}">
+            <img src="{{ url_for('static', filename='../static/bomb.png') }}" alt="Bomb">
+        </a>
+    {% endblock %}
+
 </body>
 </html>

@@ -6,7 +6,14 @@
     <title>Title</title>
 </head>
 <body>
-    {% extends 'layout.html' %}
-    <p>Index page</p>
+    {% extends "layout.html" %}
+
+    {% block title %}Home - Rock, Paper, Scissors{% endblock %}
+
+    {% block content %}
+        <h1>Welcome to Rock, Paper, Scissors, Bomb!</h1>
+        <p>Click "Start Game" to play!</p>
+    {% endblock %}
+
 </body>
 </html>

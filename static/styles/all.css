@@ -48,3 +48,18 @@ a:hover {
             font-weight: 600;
             color: #969aff;
         }
+nav ul {
+    list-style-type: none;
+    margin: 10px 0 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}

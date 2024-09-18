@@ -5,9 +5,24 @@
     <title>Results</title>
 </head>
 <body>
-    <!-- Add 2 image tags, one for the computers choice and one for the players choice -->
-    <p>Games Won: </p>
-    <p>Games Lost: </p>
-    <p><a href="/">Play Again</a></p>
+    {% extends "layout.html" %}
+
+    {% block title %}Results - Rock, Paper, Scissors{% endblock %}
+
+    {% block content %}
+        <h1>Game Results</h1>
+
+        <h2>Player's Choice:</h2>
+        <img src="{{ url_for('static', filename='images/' + player_choice + '.jpg') }}" alt="{{ player_choice }}">
+
+        <h2>Computer's Choice:</h2>
+        <img src="{{ url_for('static', filename='images/' + computer_choice + '.jpg') }}" alt="{{ computer_choice }}">
+
+        <p>Wins: {{ wins }}</p>
+        <p>Losses: {{ losses }}</p>
+
+        <a href="{{ url_for('game') }}">Play Again</a>
+    {% endblock %}
+
 </body>
 </html>
